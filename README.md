@@ -6,6 +6,7 @@ MediaManager requires Python 3.x to run
 
 # Usage
 Media Manager has two modes it :
+
 1. Catalog Mode - creates a text file of local media files found
 Command: python MediaManager.py <folder containing media> <name of file to create>
 
