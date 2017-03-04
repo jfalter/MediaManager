@@ -16,7 +16,7 @@ elif len(sys.argv) >= 3:
     print ("Starting Media Manager....")
 
     for file in os.listdir(sys.argv[1]):
-        if file.endswith(".m4v"):
+        if file.lower().endswith((".m4v", ".mp4", ".avi")):
             localMovies.append(file);
 
     print("Located %d movies locally" % len(localMovies))
