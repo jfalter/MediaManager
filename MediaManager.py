@@ -15,14 +15,19 @@ if len(sys.argv) < 3:
 elif len(sys.argv) >= 3:
     print ("Starting Media Manager....")
 
-    for file in os.listdir(sys.argv[1]):
-        if file.lower().endswith((".m4v", ".mp4", ".avi")):
-            localMovies.append(file);
+    #traverse through all subdirectories 
+#removed looking for file name, do you guys have other files mixed with your movies?
+    for path, dirnames, filename in os.walk(sys.argv[1]):
+        for movie in filename:
+            localMovies.append(movie);
 
     print("Located %d movies locally" % len(localMovies))
 
     output = open(sys.argv[2], 'w')
     output.truncate()
+    #note nuber of movies because you can
+    output.write("%s movies in collection\n" %len(localMovies))
+    output.write("\n")
     for movie in localMovies:
         output.write("%s\n" % movie)
     output.close()
